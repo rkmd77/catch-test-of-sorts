@@ -1,0 +1,54 @@
+{
+  "name": "catch-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "4.28.4",
+    "@typescript-eslint/parser": "4.28.4",
+    "eslint": "7.31.0",
+    "node-sass-chokidar": "1.5.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "build": "SASS_PATH=node_modules:src npm run build-css && react-scripts build",
+    "build-css": "SASS_PATH=node_modules:src node-sass-chokidar src/ -o src/ --include-path src/",
+    "check": "eslint src --ext js,jsx,ts,tsx",
+    "prettify": "prettier --write 'src/**/*.{css,scss,js,jsx,ts,tsx}'",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "sleep 2 && react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "watch-css": "SASS_PATH=node_modules:src node-sass-chokidar src/ -o src/ --include-path src/ --watch --recursive"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
