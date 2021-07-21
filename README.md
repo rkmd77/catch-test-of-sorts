@@ -1,5 +1,6 @@
 # Setup
 
+Please download zip file.
 In the project directory, please run:
 
 ### `npm install`
