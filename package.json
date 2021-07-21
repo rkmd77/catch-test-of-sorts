@@ -1,4 +1,5 @@
 {
+  "author": "Rick Lee <rochenz@outlook.com> (https://github.com/rkmd77/catch-test-of-sorts)",
   "name": "catch-test",
   "version": "0.1.0",
   "private": true,
@@ -23,15 +24,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "build": "SASS_PATH=node_modules:src npm run build-css && react-scripts build",
-    "build-css": "SASS_PATH=node_modules:src node-sass-chokidar src/ -o src/ --include-path src/",
+    "build": "npm run build-css && react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/ --include-path src/",
     "check": "eslint src --ext js,jsx,ts,tsx",
     "prettify": "prettier --write 'src/**/*.{css,scss,js,jsx,ts,tsx}'",
     "start": "npm-run-all -p watch-css start-js",
-    "start-js": "sleep 2 && react-scripts start",
+    "start-js": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch-css": "SASS_PATH=node_modules:src node-sass-chokidar src/ -o src/ --include-path src/ --watch --recursive"
+    "watch-css": "node-sass-chokidar src/ -o src/ --include-path src/ --watch --recursive"
   },
   "eslintConfig": {
     "extends": [
